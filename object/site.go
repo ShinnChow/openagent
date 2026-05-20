@@ -21,9 +21,9 @@ import (
 )
 
 type Site struct {
-	Owner       string `xorm:"varchar(100) notnull pk" json:"owner"`
-	Name        string `xorm:"varchar(100) notnull pk" json:"name"`
-	CreatedTime string `xorm:"varchar(100)" json:"createdTime"`
+	Owner        string `xorm:"varchar(100) notnull pk" json:"owner"`
+	Name         string `xorm:"varchar(100) notnull pk" json:"name"`
+	CreatedTime  string `xorm:"varchar(100)" json:"createdTime"`
 	DisplayName  string `xorm:"varchar(100)" json:"displayName"`
 	WelcomeTitle string `xorm:"varchar(200)" json:"welcomeTitle"`
 	WelcomeText  string `xorm:"varchar(500)" json:"welcomeText"`
