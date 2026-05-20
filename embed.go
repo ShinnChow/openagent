@@ -15,7 +15,7 @@
 //go:build embed
 
 // This file is only compiled when building with -tags embed.
-// It embeds conf/, web/build/ (without source-map files), and skills/ into
+// It embeds conf/, web/build/, and skills/ into
 // the binary, and wires them up via embedsupport.Setup so that the server
 // can run from a single executable without any on-disk assets.
 // On-disk files always take priority over the embedded versions at runtime.
@@ -32,13 +32,8 @@ import (
 //go:embed conf
 var _embeddedConf embed.FS
 
-// web/build is embedded file by file so that *.map (source-map) files are
-// excluded — they are only needed for debugging and can be tens of MB.
-//
-//go:embed web/build/index.html web/build/manifest.json web/build/asset-manifest.json
-//go:embed web/build/static/css/*.css
-//go:embed web/build/static/js/*.js web/build/static/js/*.txt
-//go:embed web/build/static/media
+//go:embed web/build/index.html web/build/favicon.ico
+//go:embed web/build/static
 var _embeddedWeb embed.FS
 
 //go:embed skills
